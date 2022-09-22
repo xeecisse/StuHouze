@@ -1,0 +1,24 @@
+.c-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.c-list__item {
+  position: relative;
+  @include font-size(14px);
+  color: #333;
+  margin: 0 0 0.5em;
+  padding-left: 1em;
+  @include mq(mobileLandscape) {
+    @include font-size(16px);
+  }
+  &::after {
+    content: url(../images/icons/square.svg);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 5px;
+    width: 5px;
+  }
+}

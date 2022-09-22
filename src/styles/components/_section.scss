@@ -1,0 +1,29 @@
+.section {
+  padding: 4em 0;
+
+  @include mq(desktop) {
+    padding: 6em 0;
+  }
+}
+
+.section__inner-wrapper {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1em;
+  @include mq(desktop) {
+    max-width: calc(1309px - 2em);
+  }
+}
+.section__header {
+  margin-bottom: 4em;
+  &::after {
+    content: '';
+    display: block;
+    margin: 1.5em auto 0;
+    width: 120px;
+    border-bottom: 3px solid #329e50;
+    padding: 0;
+    opacity: 0.5;
+    border-radius: 3px;
+  }
+}

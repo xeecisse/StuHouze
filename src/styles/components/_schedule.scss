@@ -1,0 +1,179 @@
+.c-schedule {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  @include mq(desktop) {
+    width: 584px;
+    position: absolute;
+    top: 2em;
+    left: 3.25em;
+    background-color: #ffffff;
+  }
+  @include mq(wide) {
+    width: 594px;
+    top: 6em;
+    left: 7.25em;
+  }
+}
+.c-schedule__row {
+  padding: 2em;
+  @include mq(tablet) {
+    padding: 4em;
+  }
+  @include mq(desktop) {
+    padding: 2em;
+  }
+  @include mq(wide) {
+    padding: 4em 3em 2em;
+  }
+  &:last-child {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mq(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2em;
+    }
+    @include mq(desktop) {
+      background-color: #ffffff;
+      flex-direction: column;
+      padding: 0 2em 2em;
+    }
+    @include mq(wide) {
+      padding: 0 3em 4em;
+    }
+  }
+}
+.c-schedule__title {
+  font-family: $nunito;
+  @include font-size(22px);
+  font-weight: bold;
+  margin: 0 0 0.5em;
+  @include mq(desktop) {
+    @include font-size(28px);
+  }
+}
+.c-schedule__subtitle {
+  @include font-size(18px);
+  font-weight: 500;
+  margin: 0 0 1.5em;
+  span {
+    font-weight: normal;
+  }
+  @include mq(desktop) {
+    @include font-size(19px);
+  }
+}
+.c-schedule__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  @include mq(tablet) {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 1em;
+  }
+}
+.c-schedule__list__item {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1em;
+  font-weight: 500;
+  @include mq(tablet) {
+    margin: 0 3em 0 0;
+  }
+  &:last-child {
+    margin-bottom: 2em;
+    @include mq(tablet) {
+      margin: 0;
+    }
+  }
+}
+.c-schedule__icon {
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.8em;
+}
+.c-schedule__text {
+  font-weight: 500;
+  @include font-size(13px);
+  margin: 0;
+  span {
+    color: #636363;
+  }
+}
+.c-schedule__col {
+  text-align: center;
+  @include mq(tablet) {
+    text-align: left;
+  }
+  @include mq(desktop) {
+    width: 100%;
+  }
+}
+.c-schedule__time-title {
+  @include font-size(17px);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.5em;
+  @include mq(desktop) {
+    color: #333333;
+    @include font-size(16px);
+  }
+}
+.c-schedule__time {
+  @extend .c-schedule__time-title;
+  font-weight: normal;
+  margin: 0 0 1.5em;
+  @include font-size(16px);
+  padding: 0 5em;
+  @include mq(tablet) {
+    padding: 0;
+    margin: 0;
+  }
+  @include mq(desktop) {
+    margin-bottom: 2.5em;
+  }
+  @include mq(wide) {
+    margin-bottom: 3.5em;
+  }
+}
+.c-btn--schedule {
+  padding: 0.5em 8em;
+  @include mq(tablet) {
+    padding: 0.5em 2.5em;
+  }
+  @include mq(desktop) {
+    visibility: hidden;
+    position: relative;
+    width: 100%;
+    &::after {
+      content: 'Schedule a tour';
+      visibility: visible;
+      display: block;
+      position: absolute;
+      text-transform: uppercase;
+      top: 0;
+      left: 0;
+      width: 100%;
+      @include font-size(15px);
+      padding: 0.75em 2.5em;
+      border: 3px solid #000000;
+      background-color: #000000;
+      color: #ffffff;
+      transition: 0.2s linear 0s;
+    }
+    &:hover,
+    &:active {
+      &::after {
+        background-color: lighten(#000000, 20%);
+        border-color: lighten(#000000, 20%);
+      }
+    }
+  }
+}

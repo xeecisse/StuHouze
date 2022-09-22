@@ -1,0 +1,27 @@
+.section--intro {
+  position: relative;
+  padding: 0;
+  .section__inner-wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+.c-intro {
+  position: relative;
+}
+.c-intro__image {
+  width: 100%;
+}
+.c-btn--intro {
+  position: absolute;
+  bottom: 1em;
+  right: 2em;
+  @include mq(desktop) {
+    bottom: 2.5em;
+    right: 3.25em;
+  }
+  @include mq(wide) {
+    right: 7.25em;
+  }
+}

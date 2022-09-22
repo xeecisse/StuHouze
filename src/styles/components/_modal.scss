@@ -1,0 +1,419 @@
+[data-a11y-dialog-native] .dialog-overlay {
+  display: none;
+}
+dialog[open] {
+  display: block;
+}
+.dialog[aria-hidden='true'] {
+  display: none;
+}
+.c-modal {
+  display: none;
+
+  &.is-show {
+    display: block;
+  }
+}
+.dialog-overlay {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.66);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.66);
+}
+.dialog-overlay {
+  background-color: rgba(43, 46, 56, 0.9);
+}
+
+.c-modal__close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.15s;
+  fill: #000000;
+  outline: none;
+  transition: 0.2s linear 0s;
+  &:hover {
+    fill: darkred;
+  }
+  &.c-modal__close--white {
+    fill: #fff;
+    &:hover {
+      fill: lighten(#373737, 30%);
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: translate(-50%, -40%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+.dialog:not([aria-hidden='true']) > .dialog-overlay {
+  animation: fade-in 200ms 1 both;
+}
+.dialog:not([aria-hidden='true']) > .c-modal__content,
+.dialog:not([aria-hidden='true']) > .c-modal__contents {
+  animation: appear 400ms 150ms 1 both;
+}
+
+.c-modal__content {
+  background-color: rgb(255, 255, 255);
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  border: none;
+  @include mq(desktop) {
+    width: 431px;
+    height: auto;
+    overflow: hidden;
+  }
+}
+
+.c-modal__column {
+  display: flex;
+  flex-direction: column;
+}
+.c-modal__row {
+  background: #fbfbfb;
+  padding: 3em 0;
+  text-align: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+.c-modal__title {
+  font-family: $nunito;
+  margin: 0 0 1rem;
+  color: #000000;
+  line-height: 1.5;
+  @include font-size(22px);
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.c-modal__text {
+  @include font-size(15px);
+  font-weight: normal;
+  line-height: 1.5;
+  color: #494949;
+  margin: 0;
+}
+.c-register-form {
+  background-color: #ffffff;
+  border: none;
+}
+
+.c-register-form__fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-register-form__field-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 1.375em;
+  &:last-child {
+    margin-bottom: 2.5em;
+  }
+  label {
+    @include font-size(14px);
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5em;
+  }
+  input {
+    border: 1px solid #c0c0c0;
+    width: 270px;
+    height: 39px;
+    padding: 1em;
+    @include font-size(16px);
+  }
+}
+
+.c-register-form__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.c-register-form__required {
+  @include font-size(10px);
+  font-family: $nunito;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #494949;
+  font-weight: normal;
+}
+.c-register-form--btn {
+  width: 270px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.65em 2em;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.16);
+  &:hover,
+  &:active {
+    background-color: lighten(#000000, 20%);
+  }
+}
+.c-modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 0;
+  height: 100vh;
+  @include mq(mobileLandscape) {
+    height: auto;
+  }
+}
+.c-modal__title-head {
+  @include font-size(22px);
+  font-family: $nunito;
+  margin: 0 0 0.4em;
+  color: #000000;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.c-modal__note {
+  @include font-size(15px);
+  font-weight: 500;
+  color: #494949;
+  margin: 0 0 2em;
+  padding: 0 5.5em;
+  text-align: center;
+}
+.c-modal__ckeckmark {
+  width: 100px;
+  height: 100px;
+  background: #fbfbfb;
+  border: 2px solid #e4e4e4;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5em;
+}
+
+.c-modal__contents {
+  background-color: rgb(255, 255, 255);
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  border: none;
+  @include mq(mobileLandscape) {
+    width: 431px;
+    height: auto;
+  }
+}
+
+.c-modal--gallery {
+  .c-modal__contents {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #242424;
+  }
+  .c-modal__wrappers {
+    padding: 4em 0 0;
+    @include mq(desktop) {
+      padding: 4em 4em 0;
+    }
+  }
+}
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- previous/next buttons ---- */
+
+.flickity-prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 40px;
+  border: none;
+  border-radius: 0;
+  background: #373737;
+  cursor: pointer;
+  display: none;
+  transform: translateY(-50%);
+  @include mq(desktop) {
+    display: block;
+  }
+}
+
+.flickity-prev-next-button:hover {
+  background: lighten(#373737, 10%);
+}
+
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #09f;
+}
+
+.flickity-prev-next-button:active {
+  opacity: 0.6;
+}
+
+.flickity-prev-next-button.previous {
+  left: -4em;
+}
+.flickity-prev-next-button.next {
+  right: -4em;
+}
+
+.flickity-prev-next-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.flickity-prev-next-button svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #fff;
+}
+
+.carousel {
+  background: transparent;
+  max-width: 740px;
+  margin: 0 auto;
+  @include mq(desktop) {
+    max-width: calc(920px - 2em);
+  }
+}
+
+.carousel-main {
+  margin-bottom: 2rem;
+  .carousel-cell {
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #373737;
+  }
+}
+
+.carousel-cell {
+  width: 100%;
+  height: auto;
+  margin-right: 8px;
+  @include mq(desktop) {
+    height: 504px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.carousel-nav .carousel-cell {
+  height: 90px;
+  width: 90px;
+}
+.carousel-nav .flickity-prev-next-button {
+  display: none;
+}
+
+/* Atelierbram edit */
+.carousel-main img {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 4px 55px rgba(0, 0, 0, 0.5);
+}
+.carousel__thumbnails img {
+  box-shadow: 0px 4px 55px rgba(0, 0, 0, 0.29);
+  border: 2px solid #ffffff;
+}
+
+.carousel__caption {
+  position: relative;
+  bottom: -1.5rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  color: #b0b0b0;
+  @include font-size(14px);
+}

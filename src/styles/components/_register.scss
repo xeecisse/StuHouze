@@ -1,0 +1,119 @@
+.section--register {
+  padding: 4em 0 0;
+  @include mq(desktop) {
+    padding: 6em 0 0;
+  }
+}
+.c-register {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include mq(desktop) {
+    align-items: center;
+    flex-direction: row;
+  }
+  @include mq(wide) {
+    align-items: flex-end;
+  }
+}
+.c-register__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.875em;
+  &:first-child {
+    border: 2px solid #000000;
+    position: relative;
+    background-color: #ffffff;
+  }
+  &:last-child {
+    flex-direction: column;
+  }
+  @include mq(tablet) {
+    &:last-child {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  @include mq(desktop) {
+    &:last-child {
+      flex-direction: column;
+    }
+  }
+  @include mq(wide) {
+    flex-direction: row;
+    margin-bottom: 0;
+    &:first-child {
+      border: 3px solid #000000;
+      background-color: #f7f6f4;
+      position: relative;
+      top: -9em;
+      margin: 0 6em;
+    }
+    &:last-child {
+      width: 224px;
+      flex-direction: column;
+      position: relative;
+      top: -8em;
+    }
+  }
+}
+.c-register__person {
+  width: 272px;
+  position: absolute;
+  left: auto;
+  top: -4em;
+  @include mq(wide) {
+    left: -6em;
+    top: auto;
+  }
+}
+.c-register__wrap {
+  padding: 8.5em 1em 1.5em;
+  text-align: center;
+  @include mq(tablet) {
+    padding: 8.5em 3em 3.5em;
+  }
+  @include mq(wide) {
+    padding: 3.5em 2.5em 3.5em 15.5em;
+    text-align: left;
+  }
+}
+.c-register__text {
+  text-align: left;
+  font-weight: normal;
+}
+.c-btn--register {
+  @extend .c-btn--request;
+  padding: 1em 3.8125em;
+}
+.c-register__logo {
+  margin-bottom: 3em;
+  @include mq(tablet) {
+    margin-bottom: 0;
+  }
+  @include mq(desktop) {
+    margin-bottom: 3.75em;
+  }
+}
+.c-register__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.c-register__list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  @include font-size(15px);
+  font-weight: normal;
+  color: #636363;
+}
+.c-register__link {
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+  padding-left: 2em;
+}

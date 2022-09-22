@@ -1,0 +1,16 @@
+.section--footer {
+  padding: 2em 0;
+  background-color: #f7f6f4;
+}
+.footer {
+  text-align: center;
+}
+.footer__text {
+  margin: 0;
+  color: #717171;
+  font-weight: normal;
+  @include font-size(12px);
+  @include mq(tablet) {
+    @include font-size(14px);
+  }
+}
