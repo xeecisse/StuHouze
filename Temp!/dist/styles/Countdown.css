@@ -1,0 +1,14 @@
+.countdown-timer-countainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.countdown-timer-countainer div{
+    width: 25%;
+    text-align: center;
+    font-size: 30px;
+}
+.countdown-timer-values{
+    font-size: 60px !important;
+}

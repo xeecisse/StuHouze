@@ -49,6 +49,8 @@
   <link rel="stylesheet" href="styles/vendor.min.css">
 
   <link rel="stylesheet" href="styles/main.min.css">
+  
+  <link rel="stylesheet" href="styles/Countdown.css">
 </head>
 
 <body>
@@ -56,7 +58,7 @@
     <header class="section section--header">
       <div class="section__inner-wrapper">
         <div class="header">
-          <img src="" width="172" class="header__logo" alt="StuHouze">
+          <img src="images/logo.png" width="172" class="header__logo" alt="StuHouze">
         </div>
       </div>
     </header>
@@ -283,8 +285,8 @@
       </button>
       <div class="c-modal__column">
         <div class="c-modal__row">
-          <h3 class="c-modal__title">Register for visiting</h3>
-          <p class="c-modal__text">Please fill the form so we can contact you</p>
+          <h3 class="c-modal__title">Kindly Register To Get Started </h3>
+          <p class="c-modal__text">Please fill the form </p>
         </div>
         <div class="c-modal__row c-register-form">
           <form class="c-register-form__form" id="subscribe-form">
@@ -326,8 +328,19 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="32" fill="none">
             <path stroke="#000" stroke-width="4" d="M2 17.1l12.3 12L42 2" /></svg>
         </div>
-        <h1 class="c-modal__title-head" id="dialogTitle">Thank you</h1>
-        <p class="c-modal__note" id="dialogDescription">I’ll contact yout to schedule a tour or meeting.</p>
+        <h1 class="c-modal__title-head" id="dialogTitle">Thank you!</h1>
+        <p class="c-modal__note" id="dialogDescription">Coming Shortly </p>
+        <p class="c-modal__note" id="dialogDescription">Let's Do The Countdown </p>
+        <div class="countdown-timer-container">
+          <div class="countdown-timer-values" id="days">00</div>
+          <div class="countdown-timer-values" id="hours">00</div>
+          <div class="countdown-timer-values" id="minutes">00</div>
+          <div class="countdown-timer-values" id="seconds">00</div>
+          <div>days</div>
+          <div>hours</div>
+          <div>minutes</div>
+          <div>seconds</div>
+        </div>
         <button data-a11y-dialog-hide class="c-btn c-register-form--btn" type="submit">OK</button>
       </div>
     </dialog>
@@ -376,6 +389,7 @@
   <script src="scripts/vendor.min.js"></script>
 
   <script src="scripts/main.min.js"></script>
+  <script src="scripts/main.min.js" ></script>
 </body>
 
 </html>
